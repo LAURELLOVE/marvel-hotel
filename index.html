@@ -83,11 +83,38 @@ footer a{color:var(--gold)}
 :root[data-theme="dark"] .bar .btn-book{background:var(--gold);color:#1B1507}
 @media (min-width:820px){.bar{display:none}body{padding-bottom:0}}
 .btn-wa{background:#1FA855;color:#fff}.btn-wa:hover{background:#178a45}.wa-row{padding-top:26px}.wa-row .btn,.actions .btn-wa{gap:9px}
+
+.nav{position:sticky;top:0;z-index:30;background:var(--surface);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:18px;min-height:62px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none;font-size:18px}
+.logo i{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--gold);color:#1B1507;font:800 20px Georgia,serif;font-style:normal}
+.nav-links{display:flex;margin-left:auto;gap:20px}
+.nav-links a{text-decoration:none;font-weight:600;font-size:15px;color:var(--muted)}
+.nav-links a:hover{color:var(--ink)}
+.nav .nav-cta{display:none;min-height:42px;padding:0 18px;font-size:15px;background:var(--gold);color:#1B1507}
+@media (min-width:820px){.nav .nav-cta{display:inline-flex}}
+@media (max-width:819px){.nav-links{gap:14px}.nav-links a:nth-child(n+3){display:none}.logo span{font-size:16px}}
+.ic{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:12px;background:rgba(128,128,128,.16);font-size:22px;margin-bottom:10px}
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line);padding:16px 0;max-width:760px}
+.faq summary{cursor:pointer;font-weight:700;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::after{content:"+";font-size:24px;line-height:1;color:var(--gold)}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{margin:10px 0 0;color:var(--muted)}
+.map{margin-top:26px;border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+.map iframe{display:block;width:100%;height:320px;border:0}
+.map-note{font-size:14px;color:var(--muted);margin:8px 0 0}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+section[id]{scroll-margin-top:70px}
 </style>
 </head>
 <body>
 
 <div class="demo">Sample website made for Marvel Hotel by <strong>PrimeiT Solutions</strong></div>
+<nav class="nav" aria-label="Main"><div class="wrap"><a class="logo" href="#top"><i>M</i><span>Marvel Hotel</span></a><div class="nav-links"><a href="#top2">Stay</a><a href="#rooms">Rooms</a><a href="#book">Book</a><a href="#find">Find us</a></div><a class="btn nav-cta" href="#book">Book a room</a></div></nav>
+<span id="top"></span>
 
 <header class="hero">
   <div class="wrap">
@@ -104,17 +131,17 @@ footer a{color:var(--gold)}
 </header>
 
 <main>
-<section>
+<section id="top2">
   <div class="wrap">
     <h2>Everything for a comfortable stay</h2>
     <p class="lead">Whether you are in Buea for work, a university visit, or a hike up Mount Cameroon, Marvel Hotel keeps the basics right.</p>
     <div class="amen">
-      <div><h3>Outdoor pool</h3><p>Cool off after a day in the city or on the mountain.</p></div>
-      <div><h3>Gym</h3><p>Keep your routine while you travel.</p></div>
-      <div><h3>Two restaurants + coffee shop</h3><p>Breakfast, lunch, dinner and coffee without leaving the hotel.</p></div>
-      <div><h3>Hair salon</h3><p>On site for guests and visitors.</p></div>
-      <div><h3>Free parking</h3><p>Secure self-parking for your car.</p></div>
-      <div><h3>Friendly staff</h3><p>A 24-hour front desk with multilingual staff.</p></div>
+      <div><span class="ic" aria-hidden="true">🏊</span><h3>Outdoor pool</h3><p>Cool off after a day in the city or on the mountain.</p></div>
+      <div><span class="ic" aria-hidden="true">🏋️</span><h3>Gym</h3><p>Keep your routine while you travel.</p></div>
+      <div><span class="ic" aria-hidden="true">🍽️</span><h3>Two restaurants + coffee shop</h3><p>Breakfast, lunch, dinner and coffee without leaving the hotel.</p></div>
+      <div><span class="ic" aria-hidden="true">💇</span><h3>Hair salon</h3><p>On site for guests and visitors.</p></div>
+      <div><span class="ic" aria-hidden="true">🅿️</span><h3>Free parking</h3><p>Secure self-parking for your car.</p></div>
+      <div><span class="ic" aria-hidden="true">🤝</span><h3>Friendly staff</h3><p>A 24-hour front desk with multilingual staff.</p></div>
     </div>
   </div>
 <div class="wrap wa-row"><a class="btn btn-wa wa-link" href="#" data-msg="Hello Marvel Hotel, I have a question about: Everything for a comfortable stay.">Chat on WhatsApp</a></div>
@@ -157,7 +184,8 @@ footer a{color:var(--gold)}
   </div>
 </section>
 
-<section class="find">
+<section class="faq" id="faq"><div class="wrap"><h2>Questions</h2><details><summary>What time are check-in and check-out?</summary><p>Check-in is from 12:00 and check-out is before 11:30.</p></details><details><summary>Is there parking?</summary><p>Yes, free self-parking is available.</p></details><details><summary>Is there a restaurant?</summary><p>Yes. There are two restaurants and a coffee shop on site.</p></details><details><summary>How do I book?</summary><p>Use the booking form and send it on WhatsApp. The front desk is open 24 hours.</p></details></div></section>
+<section class="find" id="find">
   <div class="wrap">
     <h2>Find us</h2>
     <div class="find-grid">
@@ -166,6 +194,7 @@ footer a{color:var(--gold)}
       <div><h3>Nearby</h3><p>Mount Cameroon trailheads and Buea town</p></div>
     </div>
   </div>
+<div class="wrap"><div class="map"><iframe title="Map of Buea" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=9.211,4.132700000000001,9.270999999999999,4.1727&amp;layer=mapnik&amp;marker=4.1527,9.241"></iframe></div><p class="map-note">Map shows the general area. <a href="https://www.google.com/maps/search/Marvel+Hotel+Buea" target="_blank" rel="noopener">Open in Google Maps</a>.</p></div>
 <div class="wrap wa-row"><a class="btn btn-wa wa-link" href="#" data-msg="Hello Marvel Hotel, I have a question about: Find us.">Chat on WhatsApp</a></div>
 </section>
 </main>
@@ -209,6 +238,11 @@ document.querySelectorAll(".wa-link").forEach((a) => {
   a.href = waLink(a.dataset.msg);
   a.target = "_blank"; a.rel = "noopener";
 });
+
+if ("IntersectionObserver" in window) {
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold: .1});
+  document.querySelectorAll("main section > .wrap, main section > div").forEach((el) => { el.classList.add("reveal"); io.observe(el); });
+}
 </script>
 </body>
 </html>
