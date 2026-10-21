@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Marvel Hotel — Buea, Cameroon</title>
+<meta name="description" content="Marvel Hotel, Buea: 30 air-conditioned rooms, pool, gym, two restaurants and a coffee shop near Mount Cameroon. Sample website by PrimeiT Solutions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#16263A; --gold:#C79A3B; --gold-deep:#9C741F; --teal:#1F6F6B;
+  --bg:#F6F5F1; --surface:#FFFFFF; --ink:#1D2630; --muted:#5B6672; --line:#DDDCD5; --on-dark:#F6F5F1;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#10161D;--surface:#19222C;--ink:#EEF0F2;--muted:#A5B0BB;--line:#2D3945;--teal:#2E8C87;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#10161D;--surface:#19222C;--ink:#EEF0F2;--muted:#A5B0BB;--line:#2D3945;--teal:#2E8C87;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:17px;line-height:1.55;padding-bottom:84px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+.demo{background:#0E1927;color:#D5DBE2;font-size:14px;text-align:center;padding:9px 16px}
+.demo strong{color:var(--gold)}
+
+.hero{background:linear-gradient(160deg,#16263A 0%,#1F3B52 55%,#1F6F6B 130%);color:var(--on-dark);padding:72px 0 0;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;border:2px solid rgba(199,154,59,.35);box-shadow:0 0 0 40px rgba(199,154,59,.08)}
+.eyebrow{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+h1{font-family:'Fraunces',Georgia,serif;font-weight:800;font-size:clamp(42px,9vw,86px);line-height:.98;letter-spacing:-1.5px;margin:10px 0 0;position:relative}
+h1 span{display:block;font-weight:500;font-size:.4em;letter-spacing:0;margin-top:12px;color:var(--gold)}
+.facts{display:flex;flex-wrap:wrap;gap:8px 20px;margin:20px 0 0;font-size:15px;color:#DCE3EA}
+.facts b{color:#fff}
+.actions{display:flex;flex-wrap:wrap;gap:12px;padding:26px 0 44px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 24px;border-radius:999px;font:700 16px/1 'Figtree',sans-serif;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn-gold{background:var(--gold);color:#1B1507}
+.btn-gold:hover{background:#D8AB4B}
+.btn-ghost{border-color:var(--gold);color:var(--on-dark);background:transparent}
+.btn-ghost:hover{background:rgba(199,154,59,.15)}
+.stripe{height:10px;background:repeating-linear-gradient(90deg,var(--gold) 0 40px,var(--gold-deep) 40px 44px)}
+
+section{padding:58px 0}
+h2{font-family:'Fraunces',Georgia,serif;font-weight:800;font-size:clamp(30px,5vw,44px);line-height:1.05;letter-spacing:-.5px;margin:0 0 10px}
+.lead{color:var(--muted);max-width:60ch;margin:0 0 28px}
+
+.amen{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border-top:2px solid var(--ink)}
+.amen div{padding:20px 18px 22px 0;border-bottom:1px solid var(--line)}
+.amen h3{font-family:'Fraunces',Georgia,serif;font-size:22px;margin:0 0 4px}
+.amen p{margin:0;color:var(--muted);font-size:16px}
+
+.rooms{background:var(--navy);color:var(--on-dark)}
+.rooms .lead{color:#B9C5D1}
+.room-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.room{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:22px}
+.room h3{font-family:'Fraunces',Georgia,serif;font-size:24px;margin:0 0 6px}
+.room p{margin:0 0 14px;color:#C5D0DA;font-size:16px}
+.room .tag{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.note{font-size:14px;color:#B9C5D1;margin-top:18px}
+
+.book-grid{display:grid;grid-template-columns:1fr;gap:28px}
+@media (min-width:820px){.book-grid{grid-template-columns:1fr 1.1fr;align-items:start}}
+form{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;gap:14px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:grid;gap:6px;font-weight:600;font-size:15px}
+input,select,textarea{font:400 16px 'Figtree',sans-serif;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:12px;min-height:48px;width:100%}
+textarea{min-height:84px;resize:vertical}
+.err{color:#C0392B;font-size:14px;min-height:1em;margin:0}
+
+.find{border-top:1px solid var(--line)}
+.find-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+.find h3{font-size:15px;color:var(--muted);font-weight:600;margin:0 0 4px}
+.find p{margin:0;font-size:19px;font-weight:700}
+
+footer{background:#0E1927;color:#C3CCD5;font-size:14px;padding:26px 0}
+footer a{color:var(--gold)}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--surface);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:flex;gap:10px;justify-content:center}
+.bar .btn{flex:1;max-width:320px;min-height:48px}
+.bar .btn-book{background:var(--navy);color:#fff}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bar .btn-book{background:var(--gold);color:#1B1507}}
+:root[data-theme="dark"] .bar .btn-book{background:var(--gold);color:#1B1507}
+@media (min-width:820px){.bar{display:none}body{padding-bottom:0}}
+</style>
+</head>
+<body>
+
+<div class="demo">Sample website made for Marvel Hotel by <strong>PrimeiT Solutions</strong></div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Buea · South West Region · Cameroon</span>
+    <h1>Marvel Hotel<span>Rest easy at the foot of Mount Cameroon</span></h1>
+    <p class="facts"><span><b>30</b> air-conditioned rooms</span><span><b>Pool</b> &amp; gym</span><span><b>24-hour</b> front desk</span><span>Free Wi-Fi in public areas</span></p>
+    <div class="actions">
+      <a class="btn btn-gold" href="#book">Book a room</a>
+      <a class="btn btn-ghost" href="#rooms">See rooms</a>
+    </div>
+  </div>
+  <div class="stripe"></div>
+</header>
+
+<main>
+<section>
+  <div class="wrap">
+    <h2>Everything for a comfortable stay</h2>
+    <p class="lead">Whether you are in Buea for work, a university visit, or a hike up Mount Cameroon, Marvel Hotel keeps the basics right.</p>
+    <div class="amen">
+      <div><h3>Outdoor pool</h3><p>Cool off after a day in the city or on the mountain.</p></div>
+      <div><h3>Gym</h3><p>Keep your routine while you travel.</p></div>
+      <div><h3>Two restaurants + coffee shop</h3><p>Breakfast, lunch, dinner and coffee without leaving the hotel.</p></div>
+      <div><h3>Hair salon</h3><p>On site for guests and visitors.</p></div>
+      <div><h3>Free parking</h3><p>Secure self-parking for your car.</p></div>
+      <div><h3>Friendly staff</h3><p>A 24-hour front desk with multilingual staff.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="rooms" id="rooms">
+  <div class="wrap">
+    <h2>Rooms</h2>
+    <p class="lead">Every room is air-conditioned with an LED TV. Choose the level of space that suits you.</p>
+    <div class="room-grid">
+      <article class="room"><span class="tag">Good value</span><h3>Deluxe</h3><p>A comfortable room for solo travellers and short stays.</p><a class="btn btn-gold" href="#book" data-room="Deluxe">Ask about Deluxe</a></article>
+      <article class="room"><span class="tag">More space</span><h3>Premium</h3><p>Extra room to work and relax for longer visits.</p><a class="btn btn-gold" href="#book" data-room="Premium">Ask about Premium</a></article>
+      <article class="room"><span class="tag">Top choice</span><h3>Royal &amp; Suites</h3><p>Our largest rooms, for families and special occasions.</p><a class="btn btn-gold" href="#book" data-room="Royal / Suite">Ask about Royal</a></article>
+    </div>
+    <p class="note">Check-in from 12:00 · Check-out before 11:30. Ask us for today's rates.</p>
+  </div>
+</section>
+
+<section id="book">
+  <div class="wrap book-grid">
+    <div>
+      <h2>Book or ask a question</h2>
+      <p class="lead">Fill in your dates and tap send. Your request opens in WhatsApp, ready to send to the front desk, so there is no waiting on a form.</p>
+    </div>
+    <form id="bookForm" novalidate>
+      <label>Your name<input id="bName" autocomplete="name" required></label>
+      <div class="row">
+        <label>Check-in<input id="bIn" type="date" required></label>
+        <label>Check-out<input id="bOut" type="date" required></label>
+      </div>
+      <div class="row">
+        <label>Room<select id="bRoom"><option>Deluxe</option><option>Premium</option><option>Royal / Suite</option></select></label>
+        <label>Guests<select id="bGuests"><option>1</option><option>2</option><option>3</option><option>4+</option></select></label>
+      </div>
+      <label>Note (optional)<textarea id="bNote"></textarea></label>
+      <p class="err" id="bErr" role="alert"></p>
+      <button class="btn btn-gold" type="submit">Send on WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+<section class="find">
+  <div class="wrap">
+    <h2>Find us</h2>
+    <div class="find-grid">
+      <div><h3>Location</h3><p>Buea, South West Region, Cameroon</p></div>
+      <div><h3>Front desk</h3><p>Open 24 hours</p></div>
+      <div><h3>Nearby</h3><p>Mount Cameroon trailheads and Buea town</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">Sample website built by <a href="https://primeitsolutions.tech">PrimeiT Solutions</a> as a demonstration for Marvel Hotel. Details such as rates, photos and contacts are placeholders until confirmed by the hotel.</div>
+</footer>
+
+<nav class="bar" aria-label="Quick actions">
+  <a class="btn btn-book" href="#book">Book a room</a>
+  <a class="btn btn-gold" id="barWa" href="#book">WhatsApp</a>
+</nav>
+
+<script>
+// The hotel's WhatsApp number, digits only with country code (e.g. 2376XXXXXXXX). Empty opens WhatsApp's contact picker.
+const WA_NUMBER = "";
+const waLink = (text) => "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(text);
+const $ = (id) => document.getElementById(id);
+
+const today = new Date().toISOString().slice(0, 10);
+$("bIn").min = today; $("bOut").min = today;
+
+document.querySelectorAll("[data-room]").forEach((a) => a.addEventListener("click", () => { $("bRoom").value = a.dataset.room; }));
+$("barWa").addEventListener("click", (e) => {
+  e.preventDefault();
+  window.open(waLink("Hello Marvel Hotel, I would like to ask about a room."), "_blank", "noopener");
+});
+
+$("bookForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const name = $("bName").value.trim(), din = $("bIn").value, dout = $("bOut").value, note = $("bNote").value.trim();
+  const err = $("bErr");
+  if (!name || !din || !dout) { err.textContent = "Please add your name and both dates."; return; }
+  if (dout <= din) { err.textContent = "Check-out must be after check-in."; return; }
+  err.textContent = "";
+  const msg = `Hello Marvel Hotel, I would like to book.\nName: ${name}\nRoom: ${$("bRoom").value}\nCheck-in: ${din}\nCheck-out: ${dout}\nGuests: ${$("bGuests").value}` + (note ? `\nNote: ${note}` : "");
+  window.open(waLink(msg), "_blank", "noopener");
+});
+</script>
+</body>
+</html>
