@@ -82,6 +82,7 @@ footer a{color:var(--gold)}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bar .btn-book{background:var(--gold);color:#1B1507}}
 :root[data-theme="dark"] .bar .btn-book{background:var(--gold);color:#1B1507}
 @media (min-width:820px){.bar{display:none}body{padding-bottom:0}}
+.btn-wa{background:#1FA855;color:#fff}.btn-wa:hover{background:#178a45}.wa-row{padding-top:26px}.wa-row .btn,.actions .btn-wa{gap:9px}
 </style>
 </head>
 <body>
@@ -96,6 +97,7 @@ footer a{color:var(--gold)}
     <div class="actions">
       <a class="btn btn-gold" href="#book">Book a room</a>
       <a class="btn btn-ghost" href="#rooms">See rooms</a>
+      <a class="btn btn-wa wa-link" href="#" data-msg="Hello Marvel Hotel, I would like to ask about a room.">Chat on WhatsApp</a>
     </div>
   </div>
   <div class="stripe"></div>
@@ -115,6 +117,7 @@ footer a{color:var(--gold)}
       <div><h3>Friendly staff</h3><p>A 24-hour front desk with multilingual staff.</p></div>
     </div>
   </div>
+<div class="wrap wa-row"><a class="btn btn-wa wa-link" href="#" data-msg="Hello Marvel Hotel, I have a question about: Everything for a comfortable stay.">Chat on WhatsApp</a></div>
 </section>
 
 <section class="rooms" id="rooms">
@@ -128,6 +131,7 @@ footer a{color:var(--gold)}
     </div>
     <p class="note">Check-in from 12:00 · Check-out before 11:30. Ask us for today's rates.</p>
   </div>
+<div class="wrap wa-row"><a class="btn btn-wa wa-link" href="#" data-msg="Hello Marvel Hotel, I have a question about: Rooms.">Chat on WhatsApp</a></div>
 </section>
 
 <section id="book">
@@ -162,6 +166,7 @@ footer a{color:var(--gold)}
       <div><h3>Nearby</h3><p>Mount Cameroon trailheads and Buea town</p></div>
     </div>
   </div>
+<div class="wrap wa-row"><a class="btn btn-wa wa-link" href="#" data-msg="Hello Marvel Hotel, I have a question about: Find us.">Chat on WhatsApp</a></div>
 </section>
 </main>
 
@@ -198,6 +203,11 @@ $("bookForm").addEventListener("submit", (e) => {
   err.textContent = "";
   const msg = `Hello Marvel Hotel, I would like to book.\nName: ${name}\nRoom: ${$("bRoom").value}\nCheck-in: ${din}\nCheck-out: ${dout}\nGuests: ${$("bGuests").value}` + (note ? `\nNote: ${note}` : "");
   window.open(waLink(msg), "_blank", "noopener");
+});
+
+document.querySelectorAll(".wa-link").forEach((a) => {
+  a.href = waLink(a.dataset.msg);
+  a.target = "_blank"; a.rel = "noopener";
 });
 </script>
 </body>
